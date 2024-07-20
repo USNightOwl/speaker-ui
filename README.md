@@ -1,4 +1,6 @@
-https://github.com/gregrickaby/nextjs-github-pages/tree/main
+[Setup github pages with nextjs, github action](https://github.com/gregrickaby/nextjs-github-pages/tree/main)
+
+[Setup Webhooks Notifications with Discord Chat](https://www.youtube.com/watch?v=-KDQqWNK3Tw)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
