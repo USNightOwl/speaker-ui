@@ -6,7 +6,7 @@ import React from "react";
 const Logo = ({ hasText }: { hasText?: boolean }) => {
   return (
     <Link href={"/"} className="flex w-fit items-center gap-2 z-10">
-      <Image src="/logo.png" width={40} height={40} alt="logo_image" />
+      <Image src="/speaker-ui/logo.png" width={40} height={40} alt="logo_image" />
       <div
         className={cn(
           "relative overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-neutral-50",
