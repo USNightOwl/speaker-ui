@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    restart: always
+    container_name: speaker-ui
+    build:
+      dockerfile: Dockerfile
+      context: "./"
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "3000:3000"
+    tty: true
