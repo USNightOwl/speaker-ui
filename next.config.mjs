@@ -21,7 +21,20 @@ const nextConfig = {
    * @see https://nextjs.org/docs/pages/api-reference/components/image#unoptimized
    */
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "nmt.logit.id.vn",
+        port: "5000",
+        pathname: "/api/v1/**",
+      },
+      {
+        protocol: "https",
+        hostname: "fakestoreapi.com",
+        port: "",
+        pathname: "/img/**",
+      },
+    ],
   },
 };
 
