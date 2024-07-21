@@ -2,6 +2,11 @@
 
 [Setup Webhooks Notifications with Discord Chat](https://www.youtube.com/watch?v=-KDQqWNK3Tw)
 
+```bash
+# run with docker
+docker run -dp 3000:3000 haonhat0703/speaker-ui
+```
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with
 [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
