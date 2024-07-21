@@ -1,8 +1,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { Blog } from "@/interfaces/blog";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import ImageFallback from "@/components/image-fallback";
 
 const BlogItem = ({ blog, className }: { blog: Blog; className?: string }) => {
   const router = useRouter();
@@ -14,8 +14,9 @@ const BlogItem = ({ blog, className }: { blog: Blog; className?: string }) => {
   return (
     <li onClick={handleViewBlog} className={cn("cursor-pointer", className)}>
       <div className="flex w-full flex-col gap-4 overflow-hidden items-center">
-        <Image
-          src={blog.imageUrl || "/og-image.jpg"}
+        <ImageFallback
+          fallbackSrc="/speaker-ui/og-image.jpg"
+          src={blog.imageUrl || "/speaker-ui/og-image.jpg"}
           alt={blog.title}
           width={1200}
           height={600}
