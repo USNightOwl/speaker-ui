@@ -4,6 +4,7 @@ import { Exo as FontSans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,10 +54,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="relative flex h-full min-h-dvh w-full flex-col items-center justify-space-between bg-white bg-dot-black/[0.2] dark:bg-black dark:bg-dot-white/[0.2]">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-            {/* <Header /> */}
             <Header />
             {children}
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
