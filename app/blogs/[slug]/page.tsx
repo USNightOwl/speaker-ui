@@ -1,9 +1,10 @@
-import { getOneBlog } from "@/utils/fetch-blogs";
+import { getListBlog, getOneBlog } from "@/utils/fetch-blogs";
 import React, { Suspense } from "react";
 import Loading from "./loading";
 import { formatDate } from "@/utils/helper";
 import ImageFallback from "@/components/image-fallback";
 import { Metadata } from "next";
+import { Blog } from "@/interfaces/blog";
 
 interface BlogProps {
   params: {
@@ -11,15 +12,14 @@ interface BlogProps {
   };
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-// export async function generateStaticParams() {
-//   const data = await getListBlog();
-//   return data.map((blog: Blog) => ({
-//     slug: blog.slug,
-//   }));
-// }
+export const dynamic = "force-dynamic";
+export async function generateStaticParams() {
+  const data = await getListBlog();
+  return data.map((blog: Blog) => ({
+    slug: blog.slug,
+  }));
+}
 
-// eslint-disable-next-line react-refresh/only-export-components
 export async function generateMetadata({ params: { slug } }: BlogProps): Promise<Metadata> {
   const blogData = await getOneBlog(slug);
   if (!blogData) {
