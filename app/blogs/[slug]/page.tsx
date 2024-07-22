@@ -12,6 +12,7 @@ interface BlogProps {
   };
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function generateStaticParams() {
   const data = await getListBlog();
   return data.map((blog: Blog) => ({
@@ -19,6 +20,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function generateMetadata({ params: { slug } }: BlogProps): Promise<Metadata> {
   const blogData = await getOneBlog(slug);
   if (!blogData) {
