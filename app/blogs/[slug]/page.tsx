@@ -1,14 +1,22 @@
-import { getOneBlog } from "@/utils/fetch-blogs";
+import { getListBlog, getOneBlog } from "@/utils/fetch-blogs";
 import React, { Suspense } from "react";
 import Loading from "./loading";
 import { formatDate } from "@/utils/helper";
 import ImageFallback from "@/components/image-fallback";
 import { Metadata } from "next";
+import { Blog } from "@/interfaces/blog";
 
 interface BlogProps {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const data = await getListBlog();
+  return data.map((blog: Blog) => ({
+    slug: blog.slug,
+  }));
 }
 
 export async function generateMetadata({ params: { slug } }: BlogProps): Promise<Metadata> {
