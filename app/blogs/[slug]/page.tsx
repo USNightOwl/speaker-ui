@@ -12,7 +12,6 @@ interface BlogProps {
   };
 }
 
-export const dynamic = "force-dynamic";
 export async function generateStaticParams() {
   const data = await getListBlog();
   return data.map((blog: Blog) => ({
